@@ -34,6 +34,10 @@ pacman -Syu --noconfirm ly
 systemctl disable sddm.service
 systemctl enable ly.service
 
+#Add configs
+cp config/* ~/.config/ -r
+
+
 #solution from here https://stackoverflow.com/a/3706774 like 43 modified to <user> ALL=(ALL) NOPASSWD: /usr/bin/xbacklight
 if [ -z "$1" ]; then
   echo "Starting up visudo with this script as first parameter"
