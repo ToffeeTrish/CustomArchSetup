@@ -2,8 +2,9 @@
 
 echo "Installing i3, bar utils, and dmenu..."
 pacman -Syu --noconfirm i3-wm i3status i3blocks dmenu
-#TODO config files
 
+echo "Installing Terminal"
+pacman -Syu --noconfirm kitty
 
 #backlight dependencies
 pacman -Syu --noconfirm xorg-xbacklight xorg-xset acpilight 
@@ -35,5 +36,4 @@ pacman -Syu --noconfirm fastfetch
 
 
 #enable ly
-systemctl disable sddm.service --now
 systemctl enable ly.service --now
