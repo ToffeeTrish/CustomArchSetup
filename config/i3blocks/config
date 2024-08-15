@@ -1,0 +1,99 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=$SCRIPT_DIR/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+
+[volume]
+label=♪ 
+command=$SCRIPT_DIR/volume/volume 
+interval=once
+signal=10
+#STEP=5%
+
+[backlight]
+command=$SCRIPT_DIR/backlight/backlight
+label=☀
+interval=once
+signal=12
+STEP_SIZE=5
+USE_SUDO=1
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+[memory]
+label=MEM 
+interval=10
+
+# CPU usage
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[cpu_usage]
+command=$SCRIPT_DIR/$BLOCK_NAME/$BLOCK_NAME
+label=CPU 
+interval=10
+#separator=false
+
+[iface]
+command=$SCRIPT_DIR/iface/iface
+#LABEL=wlan0:
+#IFACE=wlan0
+#ADDRESS_FAMILY=inet6?
+color=#00FF00
+interval=10
+# set this to 1 to display the name of the connected WIFI interface instead of the IP address.
+display_wifi_name=1
+
+[battery2]
+command=$SCRIPT_DIR/battery2/battery2
+markup=pango
+interval=10
+
+# Date Time
+#
+[time]
+interval=1
+#TZ_FILE=~/.tz
+STRFTIME_FORMAT=%Y-%m-%d %H:%M:%S
+TZONES=$DEFAULT_TZ,Australia/Auckland
+TZ_LABELS=,NZ
+
+[dunst]
+command=$SCRIPT_DIR/dunst/dunst
+interval=once
+format=json
+markup=pango
+#min_width=50
+#align=center
