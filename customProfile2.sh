@@ -31,9 +31,9 @@ echo "Installing Ly"
 pacman -Syu --noconfirm ly
 
 echo "Installing Hyfetch"
-pacman -Syu --noconfirm hyfetch
-pacman -Syu --noconfirm fastfetch
+pacman -Syu --noconfirm hyfetch fastfetch
 
+pacman -syu --noconfirm rofi
 
 #enable ly
 systemctl enable ly.service --now
