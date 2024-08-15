@@ -12,4 +12,5 @@ else
 fi
 
 chmod +x customProfile2.sh
+chmod -r 775 ~/.config/i3blocks/scripts/*
 sudo ./customProfile2.sh
