@@ -37,12 +37,13 @@ systemctl enable ly.service
 #Add configs
 cp config/* ~/.config/ -r
 
+echo "ADD THE FOLLOWING LINE TO THE SUDOERS FILE: <USER> ALL=(ALL) NOPASSWD: /usr/bin/xbacklight"
 
 #solution from here https://stackoverflow.com/a/3706774 like 43 modified to <user> ALL=(ALL) NOPASSWD: /usr/bin/xbacklight
-if [ -z "$1" ]; then
-  echo "Starting up visudo with this script as first parameter"
-  export EDITOR=$0 && sudo -E visudo
-else
-  echo "Changing sudoers"
-  echo "$USER ALL=(ALL) NOPASSWD: /usr/bin/xbacklight" >> $1
-fi
+#if [ -z "$1" ]; then
+#  echo "Starting up visudo with this script as first parameter"
+#  export EDITOR=$0 && sudo -E visudo
+#else
+#  echo "Changing sudoers"
+#  echo "$USER ALL=(ALL) NOPASSWD: /usr/bin/xbacklight" >> $1
+#fi
