@@ -29,6 +29,11 @@ pacman -Syu --noconfirm libinput-gestures
 echo "Installing Ly"
 pacman -Syu --noconfirm ly
 
+echo "Installing Hyfetch"
+pacman -Syu --noconfirm hyfetch
+pacman -Syu --noconfirm fastfetch
+
+
 #enable ly
-systemctl disable sddm.service
-systemctl enable ly.service
+systemctl disable sddm.service --now
+systemctl enable ly.service --now
